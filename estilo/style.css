@@ -1,0 +1,116 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+   margin: 0;
+   padding: 0;
+   
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fafdff;
+
+}
+.card{
+position: relative;
+width: 320px;
+height: 420px;
+background: #f8f2f5;
+border-radius: 20px;
+overflow: hidden;
+
+}
+.card:before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: #d4b5d4;
+    transform: skewy(345deg); /*para divivir as duas cores do card ao meio*/
+    transition: 0.5s;
+}
+.card:hover::before{
+    transform: skewy(390deg);  /*para mexer a divisão do meio*/
+    top: -70%;
+}
+.card::after{
+    
+    content: 'Ns'; /*nome de fundo do card*/
+    position:absolute;
+    bottom: 0;
+    left: 80px;
+    font-weight: 600;
+    font-size: 7.5em;
+    color:rgba(0, 0, 0, 0.1)
+}
+.card .imgBx{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+}
+.card .imgBx img{
+    max-width: 80%; /* tamanhp da imagem no card*/
+    transition: 0.5s;
+
+}
+.card:hover .imgBx img{
+    max-width: 70%; /*mexendo a imagem conforme o fundo*/
+}
+.card .contentBx{
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+.card .contentBx h3{
+    font-size: 18px;
+    color: #0e0d0d;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+
+}
+.card .contentBx .preco{
+    font-size: 24px;
+    color: #080808;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.card .contentBx .buy{
+    position: relative; 
+    top: 200px;
+    opacity: 1;
+    padding: 10px 30px;
+    margin-top: 15px;
+    color: #0f0f0f;
+    text-decoration: none;
+    background: #2196f3;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s;
+
+}.card:hover .contentBx .buy{
+    top: 0px;
+    opacity: 1;
+
+}.card_content{
+    display: grid;
+    width: 40%;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+
+}
